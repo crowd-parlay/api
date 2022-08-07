@@ -6,9 +6,9 @@ namespace CrowdParlay.Api.Controllers;
 [Route("[controller]")]
 public class StatusController : Controller
 {
-    [HttpGet(Name = "GetWeatherForecast")]
-    public IActionResult Index()
-    {
-        return Ok();
-    }
+    [HttpGet]
+    public IActionResult Index() => Ok();
+
+    [HttpGet("[action]")]
+    public ActionResult<string> Ping() => "Pong";
 }
